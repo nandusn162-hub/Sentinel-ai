@@ -1,11 +1,11 @@
 from fastapi import APIRouter, Depends
 from sqlalchemy.orm import Session
 from sqlalchemy import func
-from ..db.database import get_db
-from ..models.review import Review
-from ..models.flag import SuspiciousFlag
-from ..models.product import Product
-from ..models.user import User
+from db.database import get_db
+from models.review import Review
+from models.flag import SuspiciousFlag
+from models.product import Product
+from models.user import User
 
 router = APIRouter()
 

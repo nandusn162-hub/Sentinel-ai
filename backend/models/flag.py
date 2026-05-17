@@ -1,7 +1,7 @@
 from sqlalchemy import Column, Integer, String, Float, DateTime, ForeignKey
 from sqlalchemy.orm import relationship
 from datetime import datetime, timezone
-from ..db.database import Base
+from db.database import Base
 
 class SuspiciousFlag(Base):
     __tablename__ = "suspicious_flags"

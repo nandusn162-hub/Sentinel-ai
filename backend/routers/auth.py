@@ -1,8 +1,8 @@
 from fastapi import APIRouter, Depends, HTTPException, status
 from sqlalchemy.orm import Session
-from ..db.database import get_db
-from ..models.user import User
-from ..schemas.core import UserCreate, UserLogin, Token
+from db.database import get_db
+from models.user import User
+from schemas.core import UserCreate, UserLogin, Token
 import bcrypt
 from jose import jwt, JWTError
 from datetime import datetime, timedelta, timezone

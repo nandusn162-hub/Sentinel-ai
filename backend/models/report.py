@@ -1,7 +1,7 @@
 from sqlalchemy import Column, Integer, String, Float, DateTime, ForeignKey, JSON
 from sqlalchemy.orm import relationship
 from datetime import datetime, timezone
-from ..db.database import Base
+from db.database import Base
 
 class ThreatReport(Base):
     __tablename__ = "threat_reports"

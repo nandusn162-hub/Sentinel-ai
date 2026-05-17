@@ -5,9 +5,9 @@ import hashlib
 from fastapi import APIRouter, Depends, UploadFile, File
 from sqlalchemy.orm import Session
 
-from ..db.database import get_db
-from ..models.product import Product
-from ..schemas.core import ProductAnalyze
+from db.database import get_db
+from models.product import Product
+from schemas.core import ProductAnalyze
 
 router = APIRouter()
 
