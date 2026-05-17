@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const API_URL = "http://127.0.0.1:8000/api";
+const API_URL = `${process.env.NEXT_PUBLIC_API_URL}/api`;
 
 export const api = axios.create({
   baseURL: API_URL,
@@ -32,7 +32,8 @@ api.interceptors.request.use((config) => {
 // AUTH
 // =========================
 export const authApi = {
-  register: (data: Record<string, unknown>) => api.post("/auth/register", data),
+  register: (data: Record<string, unknown>) =>
+    api.post("/auth/register", data),
 
   login: (data: Record<string, string>) =>
     api.post(
