@@ -13,19 +13,29 @@ app = FastAPI(
     version="2.4.1"
 )
 
+# CORS Configuration
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:3000", "http://127.0.0.1:3000"],
+    allow_origins=[
+        "http://localhost:3000",
+        "http://127.0.0.1:3000",
+        "https://sentinel-ai-jiyv.vercel.app",
+    ],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
 )
 
+# Routers
 app.include_router(auth.router, prefix="/api/auth", tags=["auth"])
 app.include_router(analytics.router, prefix="/api/analytics", tags=["analytics"])
 app.include_router(products.router, prefix="/api/products", tags=["products"])
 app.include_router(reviews.router, prefix="/api/reviews", tags=["reviews"])
 
+# Root Endpoint
 @app.get("/")
 def read_root():
-    return {"status": "operational", "system": "Sentinel AI Defense System"}
+    return {
+        "status": "operational",
+        "system": "Sentinel AI Defense System"
+    }
